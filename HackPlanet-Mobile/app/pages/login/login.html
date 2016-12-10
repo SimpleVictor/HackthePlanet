@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <button (click)="TakeOutStatus()"  menuToggle class="scan-button" ion-button icon-only>
+        <ion-icon style="color: #17AA1C;" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title end>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="login-page">
+
+
+  <ion-list padding class="login-inputs">
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input #username type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input #password type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button class="secondary login-button" tappable ion-button full (click)="submitLogin(username, password)">Sign In</button>
+
+
+</ion-content>

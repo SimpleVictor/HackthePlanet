@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <button (click)="TakeOutStatus()" tappable menuToggle class="scan-button" ion-button icon-only>
+        <ion-icon style="color: #17AA1C;" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title end>Send Messagess</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="doctor-container">
+
+  <h1 class="welcome-tag">Hold to record</h1>
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <div id="myLoader" class="loader">
+    <div class="load_base load1">
+      <div class="load_base out_loader"></div>
+    </div>
+    <div class="load_base load2">
+      <div class="load_base in_loader in_loader1"></div>
+      <div class="load_base in_loader in_loader2"></div>
+      <div class="load_base in_loader in_loader3"></div>
+      <div class="load_base in_loader in_loader4"></div>
+    </div>
+  </div>
+
+
+
+
+
+  <button id="myButton" class="button-micro" color="primary" tappable (tap)="onPressedStart($event)" fab fab-center fab-centerd><ion-icon name="mic"></ion-icon></button>
+  <button id="myButton2" class="button-micro" color="danger" tappable (tap)="onPressedStop($event)" fab fab-center fab-centerd><ion-icon name="pause"></ion-icon></button>
+
+  <h1 *ngIf="HoldDown" class="small-text">Recording</h1>
+
+
+  <!--<button (click)="startRecord()" tappable secondary fab fab-left fab-bottom>record</button>-->
+  <button *ngIf="ShowButton" (click)="startPlay()" tappable color="danger" fab fab-left fab-bottom><ion-icon name="play"></ion-icon></button>
+  <button *ngIf="ShowButton" (click)="sendAudioToFirebase()" color="secondary" tappable favorite fab fab-right fab-bottom><ion-icon name="send"></ion-icon></button>
+
+
+
+
+</ion-content>
