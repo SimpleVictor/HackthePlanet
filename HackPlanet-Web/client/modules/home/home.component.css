@@ -4,15 +4,23 @@
     background: rgba(0,0,0,0.5);
 }
 
-#main-pic{
-    border-radius: 100%;
-    height: 100%;
-    width: 826px;
-    transform: scale(0.3);
-    top: -9%;
-    position: absolute;
-    border: 10px solid #FFF;
-    left: 20%;
+.ui.grid{
+    margin: 0;
+}
+
+/*#main-pic{*/
+    /*border-radius: 100%;*/
+    /*height: 100%;*/
+    /*!*width: 826px;*!*/
+    /*transform: scale(0.3);*/
+    /*!*top: -9%;*!*/
+    /*!*position: absolute;*!*/
+    /*border: 10px solid #FFF;*/
+    /*!*left: 20%;*!*/
+/*}*/
+
+.ui.green.segment{
+    border-top: 4px solid #21BA45;
 }
 
 #title-name{
@@ -26,5 +34,75 @@
 
 .two-letter-logo{
     background:transparent;
+    color: #17AA1C;
+}
+
+#information {
+    height: 45%;
+}
+
+.toggleButton{
+    padding:0;
+    background-color: transparent;
+}
+
+.message-info{
+    color: red;
+    text-align: center;
+    margin: 16%;
+}
+
+.imgMedicine{
+    width: 10% !important;
+    height: 14% !important;
+}
+
+.toggle.off.icon{
+    font-size: 3rem;
+    position: relative;
+     margin: 0;
+    top: .6rem;
+}
+
+.toggle.on.icon{
+    color: green;
+    font-size: 3rem;
+    position: relative;
+    margin: 0;
+    top: .6rem;
+}
+
+.profile-info{
+    position: relative;
+    right: -30%;
+    top: 47%;
+    font-size: 2rem;
+}
+
+#user-status{
+    height: 45%;
+}
+
+#profile-pic{
+    border-radius: 100%;
+    width: 29%;
+    position: absolute;
+    top: 25%;
+    border: 3px solid green;
+    left: 31%;
+}
+
+#pills{
+    height: 45%;
+}
+
+#message{
+    height: 45%;
+}
+
+.segment-title{
+    letter-spacing: 7px;
+    font-family: 'Chewy', cursive !important;
+    text-align:center;
     color: #17AA1C;
 }

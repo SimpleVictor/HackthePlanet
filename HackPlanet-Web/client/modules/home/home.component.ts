@@ -17,13 +17,27 @@ export class HomeComponent implements AfterViewInit {
     zone;
     // aud;
 
+
+    //True Means the client is in the house
+    InHouse;
+    InHouseToggle: boolean = true;
+
+
+
     constructor(private serverService: ServerService) {
 
-        console.log("23");
+        console.log("2");
 
     }
 
     ngAfterViewInit(){
+
+        this.InHouse = document.getElementsByClassName("inHouseToggle");
+        console.log(this.InHouse);
+
+
+
+
         this.zone = new NgZone({enableLongStackTrace: false});
         let valueChanged = firebase.database().ref("/Listener");
 
@@ -32,6 +46,7 @@ export class HomeComponent implements AfterViewInit {
             let obj = snapshot.val();
             console.log(obj);
 
+            this.CheckAtStartUp(obj);
 
             this.zone.run(() => {
                 Object.keys(obj).forEach((key) => {
@@ -52,6 +67,24 @@ export class HomeComponent implements AfterViewInit {
                 console.log(err);
             }
         );
+    }
+
+    CheckAtStartUp(obj){
+        let respond = obj.InHouseUser.respond;
+        console.log("Got here");
+        console.log(respond);
+
+
+
+        if(respond === 'user is not home'){
+            this.InHouse[0].className = "toggle off icon inHouseToggle";
+            this.InHouseToggle = false;
+        }else{
+            this.InHouse[0].className = "toggle on icon inHouseToggle";
+            this.InHouseToggle = true;
+        }
+
+
     }
 
     SetUpTimer(skill){
@@ -88,18 +121,20 @@ export class HomeComponent implements AfterViewInit {
 
         console.log(response);
 
+        //Make sure the user is home first
+        if(this.InHouseToggle){
+            this.PlayAlertSound(() => {
 
-        this.PlayAlertSound(() => {
+                    let aud:any = document.getElementById("message1");
+                    aud.play();
 
-                let aud:any = document.getElementById("message1");
-                aud.play();
-
-            setTimeout(() => {
-                let aud1:any = document.getElementById("randomVoice");
-                aud1.src = response;
-                aud1.play();
-            }, 3000);
-        })
+                setTimeout(() => {
+                    let aud1:any = document.getElementById("randomVoice");
+                    aud1.src = response;
+                    aud1.play();
+                }, 3000);
+            });
+        };
 
         this.refreshSkill(skill);
     }
@@ -150,6 +185,30 @@ export class HomeComponent implements AfterViewInit {
 
         this.refreshSkill(skill);
     }
+
+    InHouseUser(skill){
+        console.log("help");
+        if(this.InHouseToggle){
+            this.InHouse[0].className = "toggle off icon inHouseToggle";
+            this.InHouseToggle = false;
+            this.refreshSkill(skill);
+        }else{
+            this.InHouse[0].className = "toggle on icon inHouseToggle";
+            this.InHouseToggle = true;
+            this.refreshSkill(skill);
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 

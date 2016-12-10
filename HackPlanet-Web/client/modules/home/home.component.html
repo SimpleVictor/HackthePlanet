@@ -18,15 +18,168 @@
 <!--4 "It seems like you are running out of pills soon. Will you like to contact your doctor for more?-->
 <audio id='message4' src="assets/mp3/static/4.wav"></audio>
 
+
+
+
+
+
+
+
+
+
+
 <div class="main-container">
 
-    <h1 id="title-name">wrin<span class="two-letter-logo" >kle</span></h1>
+    <!--<h1 id="title-name">wrin<span class="two-letter-logo" >kle</span></h1>-->
 
-    <img id="main-pic" src="assets/img/oldperson.jpg">
 
-    <button (click)="PlayTest()">Play sound</button>
+    <!--<button (click)="PlayTest()">Play sound</button>-->
 
-    <!--<button (click)="getAudio()">get Audio</button>-->
+    <!--&lt;!&ndash;<button (click)="getAudio()">get Audio</button>&ndash;&gt;-->
+
+
+
+
+    <div class="ui grid">
+        <div class="eight wide column">
+            <div id="information" class="ui green segment">
+                <h1 class='segment-title'>Information</h1>
+                <hr>
+                <img id="profile-pic" src="assets/img/oldperson.jpg">
+                <p class="profile-info">John Smith</p>
+            </div>
+        </div>
+        <div class="eight wide column">
+            <div id="user-status" class="ui green segment">
+                <h1 class='segment-title'>User Status</h1>
+                <hr>
+
+
+                <div class="ui middle aligned divided list">
+                    <div class="item">
+                        <div class="right floated content">
+                            <div class="ui button toggleButton" (click)="InHouseUser()">
+                                <i class="toggle on icon inHouseToggle"></i>
+                            </div>
+                        </div>
+                        <!--<img class="ui avatar image" src="/images/avatar2/small/lena.png">-->
+                        <i class="user icon"></i>
+                        <div class="content">
+                            In House
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="right floated content">
+                            <div class="ui button toggleButton">
+                                <i class="toggle off icon"></i>
+                            </div>
+                        </div>
+                        <i class="user icon"></i>
+                        <div class="content">
+                            Schedule
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="right floated content">
+                            <div class="ui button toggleButton">
+                                <i class="toggle on icon"></i>
+                            </div>
+                        </div>
+                        <i class="user icon"></i>
+                        <div class="content">
+                            Message Notification
+                        </div>
+                    </div>
+
+
+
+                    <div class="item">
+                        <div class="right floated content">
+                            <div class="ui button toggleButton">
+                                <i class="toggle off icon"></i>
+                            </div>
+                        </div>
+                        <i class="user icon"></i>
+                        <div class="content">
+                            Alexa
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="ui grid">
+        <div class="eight wide column">
+            <div id="message" class="ui green segment">
+                <h1 class='segment-title'>Messages</h1>
+                <hr>
+                <h1 class="message-info">You have no new message</h1>
+            </div>
+        </div>
+        <div class="eight wide column">
+            <div id="pills" class="ui green segment">
+                <h1 class='segment-title'>Medication Schedule</h1>
+                <hr>
+
+                <div class="ui middle aligned divided list">
+                    <div class="item">
+                        <div class="right floated content">
+                            09:00am
+                        </div>
+                        <img class="ui avatar image imgMedicine" src="assets/img/pills/aricept-Donepezil-HCI.jpg">
+                        <div class="content">
+                            Aricept - 40mg
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="right floated content">
+                            10:30am
+                        </div>
+                        <img class="ui avatar image imgMedicine" src="assets/img/pills/coumadin.jpg">
+                        <div class="content">
+                            Coumadin - 20mg
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="right floated content">
+                            5:30pm
+                        </div>
+                        <img class="ui avatar image imgMedicine" src="assets/img/pills/lasix-furosemid.JPG">
+                        <div class="content">
+                            Lasix - 10mg
+                        </div>
+                    </div>
+
+
+
+                    <div class="item">
+                        <div class="right floated content">
+                            9:30pm
+                        </div>
+                        <img class="ui avatar image imgMedicine" src="assets/img/pills/zoloft-sertraline-HCI.jpg">
+                        <div class="content">
+                            Zoloft - 30mg
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
 
 </div>
+
+
+
+
 
