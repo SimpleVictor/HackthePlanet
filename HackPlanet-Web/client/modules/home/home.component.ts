@@ -24,6 +24,8 @@ export class HomeComponent implements AfterViewInit {
 
 
 
+    mainResponse;
+
     constructor(private serverService: ServerService) {
 
         console.log("2");
@@ -118,13 +120,12 @@ export class HomeComponent implements AfterViewInit {
 
 
         let response = key[skill].respond;
+        this.mainResponse = key[skill].respond;
 
         console.log(response);
-
         //Make sure the user is home first
         if(this.InHouseToggle){
             this.PlayAlertSound(() => {
-
                     let aud:any = document.getElementById("message1");
                     aud.play();
 
@@ -195,6 +196,16 @@ export class HomeComponent implements AfterViewInit {
         }else{
             this.InHouse[0].className = "toggle on icon inHouseToggle";
             this.InHouseToggle = true;
+            this.PlayAlertSound(() => {
+                let aud:any = document.getElementById("message1");
+                aud.play();
+
+                setTimeout(() => {
+                    let aud1:any = document.getElementById("randomVoice");
+                    aud1.src = this.mainResponse;
+                    aud1.play();
+                }, 3000);
+            });
             this.refreshSkill(skill);
         }
 

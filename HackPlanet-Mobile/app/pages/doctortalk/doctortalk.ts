@@ -100,6 +100,7 @@ export class DoctorTalk {
       console.log("GOT FILE");
       console.log(data);
       var blob = this.blobFirebase(data);
+
       var storageRef = firebase.storage().ref(`checkerTest2.wav`).put(blob).then((snapshot) => {
         console.log("Finished uploading!");
         console.log(snapshot.downloadURL);
