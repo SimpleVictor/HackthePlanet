@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2ab0fa7-3ee0-4881-b33a-3b7adf03af48" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HackPlanet-Intel/routes/index.js" afterPath="$PROJECT_DIR$/HackPlanet-Intel/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HackPlanet-Web/client/modules/home/home.component.ts" afterPath="$PROJECT_DIR$/HackPlanet-Web/client/modules/home/home.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.html" afterPath="$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +26,7 @@
       <file leaf-file-name="addpills.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="949">
+            <state relative-caret-position="182">
               <caret line="76" column="26" lean-forward="false" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -37,12 +35,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index2.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HackPlanet-Lambda/index2.ts">
+      <file leaf-file-name="addpills.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6357">
-              <caret line="489" column="19" lean-forward="false" selection-start-line="489" selection-start-column="19" selection-end-line="489" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="143">
+              <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#strong#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#strong#0;n#ion-item#2;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#strong#0;n#ion-item#3;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#strong#0;n#ion-item#4;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,11 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HackPlanet-Web/client/modules/home/home.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="228" column="38" lean-forward="true" selection-start-line="228" selection-start-column="38" selection-end-line="228" selection-end-column="38" />
+            <state relative-caret-position="69">
+              <caret line="217" column="19" lean-forward="false" selection-start-line="217" selection-start-column="19" selection-end-line="217" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -176,6 +179,7 @@
       <find>AnotherVoice</find>
       <find>Playtest</find>
       <find>countDown</find>
+      <find>mainResponse</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,7 +194,6 @@
         <option value="$PROJECT_DIR$/HackPlanet-Mobile/app/pages/doctortalk/doctortalk.html" />
         <option value="$PROJECT_DIR$/HackPlanet-Mobile/app/pages/home/home.scss" />
         <option value="$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.scss" />
-        <option value="$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.html" />
         <option value="$PROJECT_DIR$/HackPlanet-Mobile/app/pages/home/home.html" />
         <option value="$PROJECT_DIR$/HackPlanet-Mobile/app/app.ts" />
         <option value="$PROJECT_DIR$/HackPlanet-Mobile/app/theme/app.core.scss" />
@@ -212,6 +215,7 @@
         <option value="$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.ts" />
         <option value="$PROJECT_DIR$/HackPlanet-Intel/routes/index.js" />
         <option value="$PROJECT_DIR$/HackPlanet-Web/client/modules/home/home.component.ts" />
+        <option value="$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.html" />
       </list>
     </option>
   </component>
@@ -260,8 +264,18 @@
               <option name="myItemId" value="HackThePlanet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HackPlanet-Web" />
+              <option name="myItemId" value="HackThePlanet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackThePlanet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackPlanet-Mobile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -275,33 +289,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HackPlanet-Web" />
+              <option name="myItemId" value="HackPlanet-Mobile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HackThePlanet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HackThePlanet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HackPlanet-Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -315,19 +307,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HackPlanet-Web" />
+              <option name="myItemId" value="HackPlanet-Mobile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -338,6 +326,22 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HackThePlanet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackPlanet-Mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addpills" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,12 +445,12 @@
       <workItem from="1481256940311" duration="14608000" />
       <workItem from="1481395065950" duration="28141000" />
       <workItem from="1481465439121" duration="5777000" />
-      <workItem from="1481480623435" duration="3468000" />
+      <workItem from="1481480623435" duration="4331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61243000" />
+    <option name="totallyTimeSpent" value="62106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1440" height="822" extended-state="6" />
@@ -740,13 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HackPlanet-Web/client/modules/home/home.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -788,7 +785,7 @@
         <state relative-caret-position="260">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -854,16 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="949">
-          <caret line="76" column="26" lean-forward="false" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HackPlanet-Mobile/app/providers/FbService.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -908,9 +895,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HackPlanet-Web/client/modules/home/home.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="228" column="38" lean-forward="true" selection-start-line="228" selection-start-column="38" selection-end-line="228" selection-end-column="38" />
+        <state relative-caret-position="69">
+          <caret line="217" column="19" lean-forward="false" selection-start-line="217" selection-start-column="19" selection-end-line="217" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="76" column="26" lean-forward="false" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackPlanet-Mobile/app/pages/addpills/addpills.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#strong#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#strong#0;n#ion-item#2;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#strong#0;n#ion-item#3;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#strong#0;n#ion-item#4;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
