@@ -69,7 +69,7 @@ function countDown(){
 
 function UserIsNotInside(){
     var obj = {
-        active: '1',
+        active: 1,
         respond: 'user is not home'
     }
 
@@ -90,7 +90,7 @@ function UserIsNotInside(){
 
 function UserIsInside(){
     var obj = {
-        active: '1',
+        active: 1,
         respond: 'user is home'
     }
 

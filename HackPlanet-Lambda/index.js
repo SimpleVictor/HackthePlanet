@@ -297,29 +297,28 @@ function GrabVoice(intent, session, callback){
         respond: "more on body"
     };
 
-    speechOutput = `Hello hackster. I am Alexa and I will be assisting the wrinkle app. Please enjoy the rest of this corny video.`;
+    speechOutput = `Your doctor has denied your fill up. Please contact the doctor for more information`;
     callback(sessionAttributes,
         buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 
-    // requests({
-    //     url: `https://wrinkle-8419a.firebaseio.com/Listener/SetUpTimer.json`,
-    //     method: "Patch",
-    //     body: obj,
-    //     json: true
-    // }, function(err, response){
-    //     if(err){
-    //         console.log("There was an error");
-    //         console.log(err);
-    //         speechOutput = "There was a problem.";
-    //         callback(sessionAttributes,
-    //             buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
-    //     }else{
-    //         console.log("Successfully added into db");
-    //         speechOutput = `boiiiit. I will help you on any driving assistance that you need`;
-    //         callback(sessionAttributes,
-    //             buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
-    //     };
-    // });
+}
+
+function AnotherVoice(intent, session, callback){
+    const cardTitle = intent.name;
+    let repromptText = '';
+    let sessionAttributes = {};
+    const shouldEndSession = true;
+    let speechOutput = '';
+
+    let obj = {
+        active: 1,
+        respond: "more on body"
+    };
+
+    speechOutput = `Your doctor has accepted your fill up. He will contact you when it is ready for pick up`;
+    callback(sessionAttributes,
+        buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+
 }
 
 function GrabVoiceAgain(intent, session, callback){
@@ -334,7 +333,7 @@ function GrabVoiceAgain(intent, session, callback){
         respond: "more on body"
     };
 
-    speechOutput = `It seems like you will be running out of pills soon. Will you like to contact your doctor for more?`;
+    speechOutput = `Your request has been sent.`;
     callback(sessionAttributes,
         buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 
@@ -475,6 +474,117 @@ function PlayMessage4(intent, session, callback){
     });
 }
 
+function AddMorePills(intent, session, callback){
+    const cardTitle = intent.name;
+    const PillOne = intent.slots.PillOne;
+    const PillTwo = intent.slots.PillTwo;
+    let repromptText = '';
+    let sessionAttributes = {};
+    const shouldEndSession = true;
+    let speechOutput = '';
+
+    if (PillOne && PillTwo) {
+        const myPillOne = PillOne.value;
+        const myPillTwo = PillTwo.value;
+
+        let obj = {
+            active: 1,
+            respond: `${myPillOne} and ${myPillTwo}`
+        };
+
+        requests({
+            url: `https://wrinkle-8419a.firebaseio.com/Listener/AddMorePills.json`,
+            method: "Patch",
+            body: obj,
+            json: true
+        }, function(err, response){
+            if(err){
+                console.log("There was an error");
+                console.log(err);
+                speechOutput = "There was a problem connecting to the DB";
+                callback(sessionAttributes,
+                    buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+            }else{
+                console.log("Successfully added into db");
+                speechOutput = `Your request has been sent.`;
+                callback(sessionAttributes,
+                    buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+            };
+        });
+
+    } else {
+        speechOutput = "What type of pill did you wanted to fill up?";
+        callback(sessionAttributes,
+            buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+    }
+}
+
+// function DenyPills(intent, session, callback){
+//     const cardTitle = intent.name;
+//     let repromptText = '';
+//     let sessionAttributes = {};
+//     const shouldEndSession = true;
+//     let speechOutput = '';
+//
+//     let obj = {
+//         active: 1,
+//         respond: "message4"
+//     };
+//
+//     requests({
+//         url: `https://wrinkle-8419a.firebaseio.com/Listener/DenyPills.json`,
+//         method: "Patch",
+//         body: obj,
+//         json: true
+//     }, function(err, response){
+//         if(err){
+//             console.log("There was an error");
+//             console.log(err);
+//             speechOutput = "There was a problem.";
+//             callback(sessionAttributes,
+//                 buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+//         }else{
+//             console.log("Successfully added into db");
+//             speechOutput = `boiiiit. I will help you on any driving assistance that you need`;
+//             callback(sessionAttributes,
+//                 buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+//         };
+//     });
+// }
+//
+// function AcceptPills(intent, session, callback){
+//     const cardTitle = intent.name;
+//     let repromptText = '';
+//     let sessionAttributes = {};
+//     const shouldEndSession = true;
+//     let speechOutput = '';
+//
+//     let obj = {
+//         active: 1,
+//         respond: "message4"
+//     };
+//
+//     requests({
+//         url: `https://wrinkle-8419a.firebaseio.com/Listener/AcceptPills.json`,
+//         method: "Patch",
+//         body: obj,
+//         json: true
+//     }, function(err, response){
+//         if(err){
+//             console.log("There was an error");
+//             console.log(err);
+//             speechOutput = "There was a problem.";
+//             callback(sessionAttributes,
+//                 buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+//         }else{
+//             console.log("Successfully added into db");
+//             speechOutput = `boiiiit. I will help you on any driving assistance that you need`;
+//             callback(sessionAttributes,
+//                 buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+//         };
+//     });
+// }
+
 
 
 
@@ -545,6 +655,10 @@ function onIntent(intentRequest, session, callback) {
         PlayMessage3(intent, session, callback);
     }else if (intentName === 'PlayMessage4') {
         PlayMessage4(intent, session, callback);
+    }else if (intentName === 'AddMorePills') {
+        AddMorePills(intent, session, callback);
+    }else if(intentName === 'AnotherVoice'){
+        AnotherVoice(intent, session, callback);
     }
 
 

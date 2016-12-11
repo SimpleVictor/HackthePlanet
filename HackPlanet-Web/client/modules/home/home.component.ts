@@ -43,18 +43,22 @@ export class HomeComponent implements AfterViewInit {
         this.zone = new NgZone({enableLongStackTrace: false});
         let valueChanged = firebase.database().ref("/Listener");
 
+
+
         valueChanged.on("value", (snapshot) => {
 
             let obj = snapshot.val();
             console.log(obj);
 
-            this.CheckAtStartUp(obj);
+            // this.CheckAtStartUp(obj);
 
             this.zone.run(() => {
                 Object.keys(obj).forEach((key) => {
-                    if(obj[key].active === 1){
-                        this[key](key, obj);
-                    }
+                    if(key !== "AddMorePills"){
+                        if(obj[key].active === 1){
+                            this[key](key, obj);
+                        }
+                    };
                 });
             });
 
@@ -81,9 +85,11 @@ export class HomeComponent implements AfterViewInit {
         if(respond === 'user is not home'){
             this.InHouse[0].className = "toggle off icon inHouseToggle";
             this.InHouseToggle = false;
+            // this.refreshSkill(skill);
         }else{
             this.InHouse[0].className = "toggle on icon inHouseToggle";
             this.InHouseToggle = true;
+            // this.refreshSkill(skill);
         }
 
 
@@ -95,7 +101,7 @@ export class HomeComponent implements AfterViewInit {
     }
 
     PlayTest(){
-        let aud:any = document.getElementById('randomVoice');
+        let aud:any = document.getElementById('message6');
         console.log(aud.volume);
         aud.play();
     }
@@ -187,27 +193,74 @@ export class HomeComponent implements AfterViewInit {
         this.refreshSkill(skill);
     }
 
-    InHouseUser(skill){
-        console.log("help");
-        if(this.InHouseToggle){
+    PlayMessage5(skill){
+
+        this.PlayAlertSound(() => {
+            let aud:any = document.getElementById('message5');
+            aud.play();
+        })
+
+        this.refreshSkill(skill);
+    }
+
+    PlayMessage6(skill){
+
+        this.PlayAlertSound(() => {
+            let aud:any = document.getElementById('message6');
+            aud.play();
+        })
+
+        this.refreshSkill(skill);
+    }
+
+    InHouseUser(skill, respond){
+        let myResponse = respond[skill].respond;
+        console.log(myResponse);
+        if(myResponse === 'user is not home'){
             this.InHouse[0].className = "toggle off icon inHouseToggle";
             this.InHouseToggle = false;
-            this.refreshSkill(skill);
         }else{
             this.InHouse[0].className = "toggle on icon inHouseToggle";
             this.InHouseToggle = true;
-            this.PlayAlertSound(() => {
-                let aud:any = document.getElementById("message1");
-                aud.play();
-
-                setTimeout(() => {
-                    let aud1:any = document.getElementById("randomVoice");
-                    aud1.src = this.mainResponse;
-                    aud1.play();
-                }, 3000);
-            });
-            this.refreshSkill(skill);
+            if(this.mainResponse){
+                this.PlayAlertSound(() => {
+                    let aud:any = document.getElementById("message1");
+                    aud.play();
+                    setTimeout(() => {
+                        let aud1:any = document.getElementById("randomVoice");
+                        aud1.src = this.mainResponse;
+                        aud1.play();
+                    }, 3000);
+                });
+            };
         }
+
+        this.refreshSkill(skill);
+        //
+        // if(this.InHouseToggle){
+        //     this.InHouse[0].className = "toggle off icon inHouseToggle";
+        //     this.InHouseToggle = false;
+        //     this.refreshSkill(skill);
+        // }else{
+        //     this.InHouse[0].className = "toggle on icon inHouseToggle";
+        //     this.InHouseToggle = true;
+        //     if(this.mainResponse){
+        //         this.PlayAlertSound(() => {
+        //             console.log("Went in here");
+        //             console.log(this.mainResponse);
+        //             let aud:any = document.getElementById("message1");
+        //             aud.play();
+        //
+        //
+        //             setTimeout(() => {
+        //                 let aud1:any = document.getElementById("randomVoice");
+        //                 aud1.src = this.mainResponse;
+        //                 aud1.play();
+        //             }, 3000);
+        //         });
+        //     };
+        //     this.refreshSkill(skill);
+        // }
 
     }
 
