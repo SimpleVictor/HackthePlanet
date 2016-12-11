@@ -230,6 +230,7 @@ export class HomeComponent implements AfterViewInit {
                         let aud1:any = document.getElementById("randomVoice");
                         aud1.src = this.mainResponse;
                         aud1.play();
+                        this.mainResponse = false;
                     }, 3000);
                 });
             };

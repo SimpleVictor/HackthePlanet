@@ -19,7 +19,27 @@ var count = '10';
 
 var isUserInside = false;
 
+var lcd;
+
 board.on("ready", function() {
+
+
+    lcd = new five.LCD({
+        controller: "JHD1313M1"
+    });
+
+
+
+    // setTimeout(function(){
+    //     lcd.clear().cursor(0,0).print("hellloooooo");
+    // }, 5000);
+
+
+    // // set up the LCD's number of columns and rows:
+    // lcd.cursor(0, 0);
+    // // Print a message to the LCD.
+    // lcd.print("hello, world!");
+
 
     var motion = new five.Motion(6);
 
@@ -35,7 +55,9 @@ board.on("ready", function() {
             UserIsInside()
         }
 
-        console.log("motionstart")
+        lcd.bgColor("#17AA1C");
+
+        console.log("motionstart");
         isUserInside = true;
         count = 10;
     });
@@ -84,6 +106,7 @@ function UserIsNotInside(){
             console.log("There was an error");
         }else{
             console.log("Successfully added into db");
+            lcd.bgColor("#FF0000");
         };
     });
 }
